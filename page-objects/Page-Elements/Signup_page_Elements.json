@@ -1,0 +1,6 @@
+{
+ "name":"//input[@id='name']",
+ "Email":"//input[@id='email']",
+ "password":"//input[@id='password']"
+}
+

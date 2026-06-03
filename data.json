@@ -1,0 +1,24 @@
+    {
+        "log in and log out with the valid credentials":{
+          "username":"admin@email.com",
+          "password":"admin@123"
+
+        },
+       
+          "interest":[
+          "PHP",
+         "cloud",
+         "JMeter"
+
+          ],
+
+          "log in with invalid credentials":{
+            "Invalidusername":"admin@email.comm",
+            "Invalidpassword":"1234"
+            
+          }
+
+        }
+         
+    
+    

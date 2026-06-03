@@ -1,0 +1,26 @@
+{
+    "app": {
+        "url": "https://freelance-learn-automation.vercel.app/login",
+        "SignuppageUrl": "https://freelance-learn-automation.vercel.app/signup",
+        "title": "Learn Automation Courses",
+      "LoginError": "USER Email Doesn't Exist",
+        "username": "admin@email.com",
+        "password": "admin@123"
+    },
+    "db": {
+        "host": "localhost",
+        "port": 330,
+        "username": "root",
+        "password": "password",
+        "database": "my_database"
+    },
+    "api": {
+        "endpoint": "https://api.example.com",
+        "key": "your_api_key"
+    },
+    "ollama": {
+        "model": "ollama/model:latest",
+        "temperature": 0.7,
+        "max_tokens": 1000
+    }
+}

@@ -1,0 +1,11 @@
+    {
+    "Email":"//input[@name='email1']",
+    "Userpassword": "//input[@name='password1']",
+    "LoginButton":"button.submit-btn",
+    "header":"//h2[normalize-space()='Sign In']",
+     "menu":"//img[@alt='menu']",
+     "logoutButton":"//button[normalize-space()='Sign out']", 
+     "loginError":"//h2[@class='errorMessage']"
+      
+     
+    }
