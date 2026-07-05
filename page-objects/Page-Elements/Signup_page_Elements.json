@@ -1,6 +1,19 @@
 {
- "name":"//input[@id='name']",
- "Email":"//input[@id='email']",
- "password":"//input[@id='password']"
+    "name":"//input[@id='name']",
+    "Email":"//input[@id='email']",
+    "password":"//input[@id='password']",
+    "interest":[
+         "JMeter"
+          ],
+
+    "gender": "//input[@id='gender1']",
+    "State":"//select[@id='state']",
+    "hobbies":"//select[@id='hobbies']",
+    "SignupButton": "//button[normalize-space()='Sign up']",
+    "errormsg":"//h2[normalize-space()='Email already registered!']"
+    
+    
+
+
 }
 

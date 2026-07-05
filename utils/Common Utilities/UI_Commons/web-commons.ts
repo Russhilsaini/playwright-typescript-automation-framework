@@ -1,5 +1,7 @@
 import { Page , Locator ,expect } from "@playwright/test";
 
+
+
  export  class WebCommons{
     Page:Page;
 
@@ -22,7 +24,8 @@ import { Page , Locator ,expect } from "@playwright/test";
 //method to scroll to an element
 
         async scrollToElement(locator:string):Promise <void>{
-        const element= await this.element(locator);(await element).scrollIntoViewIfNeeded()
+        const element= await this.element(locator);
+        await element.scrollIntoViewIfNeeded()
             
 }
     //method to click the element
@@ -107,7 +110,7 @@ async rightclickElment(locator:string):Promise<void>{
 
     //common method for filling text 
 
-    async entertext(locator:string,text:string):Promise<void>{
+    async entertext(locator:string,text:string,email?:string):Promise<void>{
         const element= await this.element(locator)
         await this.scrollToElement(locator)
         await this.clearExsistingText(locator)
@@ -140,7 +143,7 @@ async rightclickElment(locator:string):Promise<void>{
         async selectOption(locator:string,option:string):Promise<void>{
             const element= await this.element(locator)
             await this.scrollToElement(locator)
-            await element.selectOption(option)
+            await element.selectOption({value:option})
         }
 
         //Method to select the checkboxes 
@@ -161,6 +164,13 @@ async rightclickElment(locator:string):Promise<void>{
         }
 
 
+        
+        //Method to check the radio button
+
+    async selectradioButton (locator:string):Promise<void> {
+        const element= await this.element(locator)
+        await element.check()
+    }
 
 
     }

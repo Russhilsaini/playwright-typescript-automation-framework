@@ -1,7 +1,8 @@
     import { test, expect, TestInfo } from '@playwright/test';
     import { loginSteps } from '../../page-objects/Page-steps/login-page.ts';
     import data from "../../data.json" with {type:'json'}
-import { CreatingnewuserSteps } from '../../page-objects/Page-steps/signUp-page.ts';
+    import { CreatingnewuserSteps } from '../../page-objects/Page-steps/signUp-page.ts';
+
     
 
     let loginpage:loginSteps;
@@ -43,24 +44,49 @@ import { CreatingnewuserSteps } from '../../page-objects/Page-steps/signUp-page.
       // 3. test case to login with Invalid credentials
 
 
-      test.only("log in with invalid credentials",async function({},testinfo:TestInfo){
+      test("log in with invalid credentials",async function({},testinfo:TestInfo){
         testData=data[testinfo.title as keyof typeof data]
         await loginpage.launchtheApplication()
         await loginpage.enterusernameAndpassword(testData.Invalidusername,testData.Invalidpassword)
         await loginpage.Clickloginbutton()
-        await loginpage.verifyLoginError()
+        await loginpage.verifyLoginError();
       })
 
 
-// test case for selecting the interests from the checkboxes
+    // test case for creating the new user (SIgnup page)
 
-    test ("selecting Interest",async function() {
-        await signuppage.launchtheSignuppage()
+      test("Create a new user",async function () {
+        testData=data
+        await signuppage.launchsignuppage();
+        await signuppage.enternameEmailPassword(testData.newuserdata.Newname,testData.newuserdata.Newemail,testData.newuserdata.Newpassword);
         await signuppage.SelectTheCheckboxes()
+        await signuppage.radiobuttonSelection()
+        await signuppage.selectState(testData.newuserdata.stateValue)
+        await signuppage.selectHobbies(testData.newuserdata.hobbie)
+        await signuppage.clickSignupbutton()
+        await signuppage.verifyredirectedUrl()
+      })
+
+
+
+    // test case for verifing the error message while creating the new user
+
+        test("Verify the error message while creating the new user",async function () {
+        testData=data
+        await signuppage.launchsignuppage();
+        await signuppage.enternameEmailPassword(testData.exsistedduserdata.exsistingusername,testData.exsistedduserdata.exsistinguseremail,testData.exsistedduserdata.exsistinguserPassword);
+        await signuppage.SelectTheCheckboxes()
+        await signuppage.radiobuttonSelection()
+        await signuppage.selectState(testData.exsistedduserdata.stateValue)
+        await signuppage.selectHobbies(testData.exsistedduserdata.hobbie)
+        await signuppage.clickSignupbutton()
+        await signuppage.verifyerrorText(testData.errormsg.errorText)
+      })
+
+        
     })
 
 
 
-    })
-
+  
     

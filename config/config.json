@@ -1,6 +1,7 @@
 {
     "app": {
         "url": "https://freelance-learn-automation.vercel.app/login",
+        
         "SignuppageUrl": "https://freelance-learn-automation.vercel.app/signup",
         "title": "Learn Automation Courses",
       "LoginError": "USER Email Doesn't Exist",

@@ -5,18 +5,37 @@
 
         },
        
-          "interest":[
-          "PHP",
-         "cloud",
-         "JMeter"
-
-          ],
+          
 
           "log in with invalid credentials":{
             "Invalidusername":"admin@email.comm",
             "Invalidpassword":"1234"
             
-          }
+          },
+          
+          "newuserdata":{
+            "Newname":"Russhil",
+            "Newemail":"adminsar@gmail.com",
+            "Newpassword":"28232002",
+            "stateValue":"Uttar Pradesh",
+            "hobbie":"Playing"
+            
+          },
+
+          "exsistedduserdata":{
+            "exsistingusername":"saini",
+            "exsistinguseremail":"admin@gmail.com",
+            "exsistinguserPassword":"282320021",
+            "stateValue":"West Bengal",
+            "hobbie":"Playing"
+            
+          },
+
+          
+          "errormsg":{
+            "errorText": "Email already registered!"
+
+        }
 
         }
          
